@@ -1,5 +1,3 @@
-var contentFilterOptions = JSON.parse($('#contentFilterJSON').text())
-
 const initializeContentFilter = () => {
   const dropdowns = Array.from(document.querySelectorAll('select.content-filter-dropdown'))
   for (let dropdown of dropdowns) {
@@ -7,7 +5,16 @@ const initializeContentFilter = () => {
     const id = dropdown.getAttribute('data-id')
     const level = Number(dropdown.getAttribute('data-level'))
 
-    for (let { value, description } of Object.values(contentFilterOptions)) {
+    const ARR = [
+      { value: -1, description: 'All' },
+      {
+        value: 0,
+        description: 'Rural',
+      },
+      { value: 1, description: 'Urban' },
+    ]
+
+    for (let { value, description } of ARR) {
       const optionEl = document.createElement('option')
       optionEl.setAttribute('value', value)
       if (level == value) {
