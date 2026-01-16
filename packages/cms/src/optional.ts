@@ -15,8 +15,16 @@ try {
 
 let contentFilterOptions = [
   {
-    value: 0,
+    value: -1,
     description: 'All',
+  },
+  {
+    value: 0,
+    description: 'Rural',
+  },
+  {
+    value: 1,
+    description: 'Urban',
   },
 ]
 
